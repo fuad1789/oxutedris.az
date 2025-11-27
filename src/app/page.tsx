@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { ArrowRight, CheckCircle } from 'lucide-react';
 import Hero from '@/components/Hero';
 import SectionWrapper from '@/components/SectionWrapper';
@@ -50,9 +51,13 @@ export default function Home() {
             </Link>
           </div>
           <div className="relative h-[400px] bg-gray-100 rounded-2xl overflow-hidden shadow-lg">
-             {/* Placeholder for About Image */}
-             <div className="absolute inset-0 flex items-center justify-center bg-blue-50 text-primary/20">
-                <span className="text-6xl font-bold">OXU</span>
+             <div className="absolute inset-0">
+                <Image
+                  src="/oxumerkezi.png"
+                  alt="Oxu Tədris Mərkəzi"
+                  fill
+                  className="object-cover"
+                />
              </div>
           </div>
         </div>
