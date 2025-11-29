@@ -12,10 +12,9 @@ export interface Testimonial {
 }
 
 export const stats: Stat[] = [
-  { id: '1', value: '98%', label: 'Qəbul Nəticəsi' },
-  { id: '2', value: '200+', label: 'Yüksək Bal (600+)' },
-  { id: '3', value: '15+', label: 'İllik Təcrübə' },
-  { id: '4', value: '1000+', label: 'Məzun' },
+  { id: '1', value: '98%', label: 'Qəbul nəticəsi' },
+  { id: '2', value: '15+', label: 'İllik təcrübə' },
+  { id: '3', value: '1000+', label: 'Məzun' },
 ];
 
 export const testimonials: Testimonial[] = [
@@ -36,5 +35,11 @@ export const testimonials: Testimonial[] = [
     name: 'Orxan Əliyev',
     role: 'Valideyn (7-ci sinif)',
     content: 'Oğlum burada riyaziyyat dərslərinə gedir. Artıq məktəbdə qiymətləri yüksəlib və fənnə marağı artıb. Uşaqlarla işləməyi bacaran müəllimlər!',
+  },
+  {
+    id: '4',
+    name: 'Leyla Qasımova',
+    role: 'Valideyn (5-ci sinif)',
+    content: 'Qızım məktəbəqədər hazırlıq kursuna gedir. Oyun əsaslı dərslər sayəsində məktəbə çox yaxşı hazırlaşdı. Müəllimlərin uşaqlara yanaşması mükəmməldir!',
   },
 ];

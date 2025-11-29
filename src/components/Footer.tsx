@@ -82,11 +82,11 @@ const Footer = () => {
             <ul className="space-y-3">
               <li className="flex items-start gap-3 text-gray-300 text-sm">
                 <MapPin size={18} className="mt-0.5 flex-shrink-0" />
-                <span>Bakı şəhəri, Nərimanov rayonu, Əhməd Rəcəbli küçəsi 15</span>
+                <span>Bakı şəhəri, Həzi Aslanov rayonu, Rübail İsgəndərov 15</span>
               </li>
               <li className="flex items-center gap-3 text-gray-300 text-sm">
                 <Phone size={18} className="flex-shrink-0" />
-                <span>+994 50 123 45 67</span>
+                <span>+994 55 143 65 47</span>
               </li>
               <li className="flex items-center gap-3 text-gray-300 text-sm">
                 <Mail size={18} className="flex-shrink-0" />

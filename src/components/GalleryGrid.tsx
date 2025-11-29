@@ -36,29 +36,29 @@ const GalleryGrid = () => {
       id: 3, 
       color: 'bg-orange-50', 
       iconColor: 'text-orange-600',
-      label: 'Məktəblilər üçün tədbirlər',
-      icon: Sparkles,
+      label: 'Müəllimlərlə məşğələlər',
+      icon: Users,
     },
     { 
       id: 4, 
       color: 'bg-pink-50', 
       iconColor: 'text-pink-600',
-      label: 'Uşaqlar üçün mükafatlandırma',
-      icon: Trophy,
+      label: 'Tədbirlər',
+      icon: Sparkles,
     },
     { 
       id: 5, 
-      color: 'bg-purple-50', 
-      iconColor: 'text-purple-600',
-      label: 'Şagirdlərlə ekskursiya',
-      icon: Users,
+      color: 'bg-yellow-50', 
+      iconColor: 'text-yellow-600',
+      label: 'Mükafatlandırma',
+      icon: Trophy,
     },
     { 
       id: 6, 
-      color: 'bg-indigo-50', 
-      iconColor: 'text-indigo-600',
-      label: 'Valideynlərlə görüşlər',
-      icon: Heart,
+      color: 'bg-purple-50', 
+      iconColor: 'text-purple-600',
+      label: 'Sinif otaqları, interaktiv lövhələr',
+      icon: Lightbulb,
     },
   ];
 
@@ -72,7 +72,7 @@ const GalleryGrid = () => {
             return (
               <div 
                 key={img.id} 
-                className={`group flex-shrink-0 w-64 h-48 rounded-xl ${img.color} border border-gray-100 hover:border-gray-200 transition-all duration-300 cursor-pointer`}
+                className={`group flex-shrink-0 w-64 h-48 rounded-2xl ${img.color} border border-gray-100 hover:border-gray-200 transition-all duration-300 cursor-pointer hover:shadow-premium hover:-translate-y-1`}
               >
                 {/* Content */}
                 <div className="relative h-full flex flex-col items-center justify-center p-6">

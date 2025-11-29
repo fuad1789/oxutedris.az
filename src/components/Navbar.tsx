@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Menu, X, Phone } from 'lucide-react';
+import { Menu, X, Phone, MessageCircle } from 'lucide-react';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -20,7 +20,7 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="bg-white shadow-md sticky top-0 z-50">
+    <nav className="bg-white shadow-premium sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-20">
           <div className="flex items-center">
@@ -40,7 +40,7 @@ const Navbar = () => {
           </div>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-6">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
@@ -52,11 +52,19 @@ const Navbar = () => {
             ))}
             <Link
               href="/contact"
-              className="bg-primary text-white px-5 py-2 rounded-md font-medium hover:bg-secondary transition-colors duration-200 flex items-center gap-2"
+              className="text-gray-700 hover:text-primary font-medium transition-colors duration-200"
             >
-              <Phone size={18} />
               Əlaqə
             </Link>
+            <a
+              href="https://wa.me/994551436547"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-[#25D366] text-white px-6 py-3 rounded-xl font-semibold hover:bg-[#20BA5A] transition-all duration-200 flex items-center gap-2 shadow-premium hover:shadow-premium-lg"
+            >
+              <MessageCircle size={20} />
+              WhatsApp ilə əlaqə
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -88,10 +96,20 @@ const Navbar = () => {
             <Link
               href="/contact"
               onClick={() => setIsOpen(false)}
-              className="block w-full text-center mt-4 bg-primary text-white px-5 py-3 rounded-md font-medium hover:bg-secondary transition-colors duration-200"
+              className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50"
             >
               Əlaqə
             </Link>
+            <a
+              href="https://wa.me/994551436547"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setIsOpen(false)}
+              className="block w-full text-center mt-4 bg-[#25D366] text-white px-5 py-3 rounded-lg font-semibold hover:bg-[#20BA5A] transition-colors duration-200 shadow-md"
+            >
+              <MessageCircle size={20} className="inline mr-2" />
+              WhatsApp ilə əlaqə
+            </a>
           </div>
         </div>
       )}

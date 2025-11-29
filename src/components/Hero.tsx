@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { ArrowRight, Star, Shield, TrendingUp } from 'lucide-react';
+import { ArrowRight, Star, Shield, TrendingUp, MessageCircle } from 'lucide-react';
 
 const Hero = () => {
   return (
@@ -31,7 +31,7 @@ const Hero = () => {
             </h1>
             
             <p className="text-lg md:text-xl text-blue-100 max-w-xl leading-relaxed">
-              Oxu Tədris Mərkəzi — məktəb yaşlı uşaqlar üçün (1-9-cu sinif) peşəkar təhsil mərkəzi. Uşaqlarınızın gələcəyini bizimlə qurun, valideynlər üçün rahatlıq və əminlik.
+              Oxu Tədris Mərkəzi — 1–9 cu siniflər üçün peşəkar tədris mərkəzi. Uşaqların inkişafını, valideynlərin rahatlığını və təhlükəsiz təhsil mühitini təmin edirik.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
@@ -42,12 +42,15 @@ const Hero = () => {
                 Qeydiyyatdan Keç
                 <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
               </Link>
-              <Link
-                href="/courses"
-                className="group bg-white/5 backdrop-blur-sm border border-white/20 text-white font-semibold px-8 py-4 rounded-xl hover:bg-white/10 transition-all duration-300 flex items-center justify-center"
+              <a
+                href="https://wa.me/994551436547"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group bg-[#25D366] text-white font-semibold px-8 py-4 rounded-xl hover:bg-[#20BA5A] transition-all duration-300 shadow-[0_0_20px_rgba(37,211,102,0.3)] hover:shadow-[0_0_30px_rgba(37,211,102,0.5)] flex items-center justify-center gap-2"
               >
-                Kurslarımızla Tanış Ol
-              </Link>
+                <MessageCircle size={20} />
+                WhatsApp ilə sorğu ver
+              </a>
             </div>
 
             <div className="flex items-center gap-8 pt-8 border-t border-white/10">
@@ -71,37 +74,29 @@ const Hero = () => {
             </p>
           </div>
 
-          {/* Visual Content */}
+          {/* Visual Content - 3 Benefit Cards */}
           <div className="hidden lg:block relative">
-            <div className="relative z-10 grid grid-cols-2 gap-4">
-              <div className="space-y-4 mt-12">
-                <div className="bg-white/10 backdrop-blur-md p-6 rounded-2xl border border-white/20 transform hover:-translate-y-2 transition-transform duration-300">
-                  <div className="w-12 h-12 bg-blue-500/20 rounded-lg flex items-center justify-center mb-4 text-blue-300">
-                    <Star size={24} fill="currentColor" />
-                  </div>
-                  <h3 className="text-lg font-bold mb-2">Uşaqların İnkişafı</h3>
-                  <p className="text-sm text-blue-100">Hər uşağın fərdi inkişafını izləyir və dəstəkləyirik.</p>
+            <div className="relative z-10 space-y-4">
+              <div className="bg-white/10 backdrop-blur-md p-6 rounded-2xl border border-white/20 transform hover:-translate-y-2 transition-transform duration-300 shadow-lg">
+                <div className="w-12 h-12 bg-blue-500/20 rounded-lg flex items-center justify-center mb-4 text-blue-300">
+                  <Star size={24} fill="currentColor" />
                 </div>
-                <div className="bg-white/10 backdrop-blur-md p-6 rounded-2xl border border-white/20 transform hover:-translate-y-2 transition-transform duration-300">
-                  <div className="w-12 h-12 bg-purple-500/20 rounded-lg flex items-center justify-center mb-4 text-purple-300">
-                    <TrendingUp size={24} />
-                  </div>
-                  <h3 className="text-lg font-bold mb-2">Valideynlə Əlaqə</h3>
-                  <p className="text-sm text-blue-100">Aylıq hesabatlar və valideynlərlə daimi əlaqə.</p>
-                </div>
+                <h3 className="text-lg font-bold mb-2 text-white">Uşaqların inkişafı</h3>
+                <p className="text-sm text-blue-100">Hər uşağın fərdi inkişafını izləyir və dəstəkləyirik.</p>
               </div>
-              <div className="space-y-4">
-                <div className="bg-white/10 backdrop-blur-md p-6 rounded-2xl border border-white/20 transform hover:-translate-y-2 transition-transform duration-300">
-                  <div className="w-12 h-12 bg-green-500/20 rounded-lg flex items-center justify-center mb-4 text-green-300">
-                    <Shield size={24} />
-                  </div>
-                  <h3 className="text-lg font-bold mb-2">Təhlükəsiz Mühit</h3>
-                  <p className="text-sm text-blue-100">Uşaqlar üçün nəzarətli və təhlükəsiz öyrənmə mühiti.</p>
+              <div className="bg-white/10 backdrop-blur-md p-6 rounded-2xl border border-white/20 transform hover:-translate-y-2 transition-transform duration-300 shadow-lg">
+                <div className="w-12 h-12 bg-green-500/20 rounded-lg flex items-center justify-center mb-4 text-green-300">
+                  <Shield size={24} />
                 </div>
-                {/* Abstract decorative box */}
-                <div className="h-40 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-2xl opacity-80 flex items-center justify-center transform hover:scale-105 transition-transform duration-300">
-                   <span className="text-4xl font-bold text-white">OXU</span>
+                <h3 className="text-lg font-bold mb-2 text-white">Təhlükəsiz mühit</h3>
+                <p className="text-sm text-blue-100">Uşaqlar üçün nəzarətli və təhlükəsiz öyrənmə mühiti.</p>
+              </div>
+              <div className="bg-white/10 backdrop-blur-md p-6 rounded-2xl border border-white/20 transform hover:-translate-y-2 transition-transform duration-300 shadow-lg">
+                <div className="w-12 h-12 bg-purple-500/20 rounded-lg flex items-center justify-center mb-4 text-purple-300">
+                  <TrendingUp size={24} />
                 </div>
+                <h3 className="text-lg font-bold mb-2 text-white">Valideynlərlə aylıq hesabat</h3>
+                <p className="text-sm text-blue-100">Aylıq şəffaf hesabatlar və valideynlərlə daimi əlaqə.</p>
               </div>
             </div>
             

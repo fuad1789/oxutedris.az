@@ -6,13 +6,15 @@ import SectionWrapper from '@/components/SectionWrapper';
 import CourseCard from '@/components/CourseCard';
 import StatCard from '@/components/StatCard';
 import TestimonialCard from '@/components/TestimonialCard';
+import TeacherCard from '@/components/TeacherCard';
 import GalleryGrid from '@/components/GalleryGrid';
 import { courses } from '@/data/courses';
 import { stats, testimonials } from '@/data/stats';
+import { teachers } from '@/data/teachers';
 
 export default function Home() {
-  // Select featured courses (e.g., first 3)
-  const featuredCourses = courses.slice(0, 3);
+  // Show all courses
+  const featuredCourses = courses;
 
   return (
     <main className="min-h-screen">
@@ -26,20 +28,22 @@ export default function Home() {
               Niyə <span className="text-primary">Oxu Tədris Mərkəzi?</span>
             </h2>
             <p className="text-gray-600 mb-6 leading-relaxed">
-              Biz məktəb yaşlı uşaqların təhsili ilə məşğul olan ixtisaslaşmış mərkəzik. 
-              Peşəkar müəllim heyəti, uşaq psixologiyasına uyğun metodlar və 
+              Valideyn ağrılarını anlayırıq və uşağınızın uğurlu gələcəyini təmin etmək üçün 
+              hər addımda yanınızdayıq. Peşəkar müəllim heyəti, uşaq psixologiyasına uyğun metodlar və 
               valideynlərlə sıx əməkdaşlıq ilə uşağınızın gələcəyini qururuq.
             </p>
             <ul className="space-y-4 mb-8">
               {[
-                'Kiçik qruplar və fərdi diqqət',
-                'Uşaqlar üçün interaktiv və oyun elementli dərslər',
-                'Valideynlərlə daimi əlaqə və aylıq hesabatlar',
-                'Uşağın psixoloji rahatlığı və motivasiyası',
+                'Kiçik qruplar',
+                'İnteraktiv və oyun əsaslı dərslər',
+                'Peşəkar müəllim heyəti',
+                'Valideynlər üçün aylıq şəffaf hesabatlar',
+                'Psixoloq dəstəyi',
+                'Təhlükəsiz təhsil mühiti',
               ].map((item, index) => (
                 <li key={index} className="flex items-center text-gray-700">
-                  <CheckCircle className="text-secondary mr-3 h-5 w-5" />
-                  {item}
+                  <CheckCircle className="text-secondary mr-3 h-5 w-5 flex-shrink-0" />
+                  <span>{item}</span>
                 </li>
               ))}
             </ul>
@@ -50,15 +54,27 @@ export default function Home() {
               Haqqımızda daha ətraflı <ArrowRight size={18} />
             </Link>
           </div>
-          <div className="relative h-[400px] bg-gray-100 rounded-2xl overflow-hidden shadow-lg">
-             <div className="absolute inset-0">
+          <div className="space-y-6">
+            <div className="relative h-[300px] bg-gray-100 rounded-2xl overflow-hidden shadow-lg">
+              <div className="absolute inset-0">
                 <Image
                   src="/oxumerkezi.png"
-                  alt="Oxu Tədris Mərkəzi"
+                  alt="Oxu Tədris Mərkəzi binası"
                   fill
                   className="object-cover"
                 />
-             </div>
+              </div>
+            </div>
+            <div className="bg-blue-50 p-6 rounded-xl border border-blue-100">
+              <h3 className="font-bold text-gray-900 mb-3 flex items-center gap-2">
+                <span className="text-primary">📍</span>
+                Ünvanımız
+              </h3>
+              <p className="text-gray-700 leading-relaxed">
+                Bakı şəhəri, Həzi Aslanov rayonu,<br />
+                Rübail İsgəndərov 15
+              </p>
+            </div>
           </div>
         </div>
       </SectionWrapper>
@@ -66,7 +82,7 @@ export default function Home() {
       {/* Stats Section */}
       <div className="bg-primary py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {stats.map((stat) => (
               <StatCard key={stat.id} value={stat.value} label={stat.label} />
             ))}
@@ -76,13 +92,13 @@ export default function Home() {
 
       {/* Featured Courses Section */}
       <SectionWrapper id="courses" className="bg-gray-50">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">Populyar Kurslarımız</h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
+        <div className="text-center mb-8">
+          <h2 className="text-3xl font-bold text-gray-900 mb-3">Kurslar</h2>
+          <p className="text-gray-600 max-w-2xl mx-auto text-sm">
             Məktəb şagirdləri üçün uyğun kurslar. Yaş və sinif qruplarına görə təşkil edilmiş dərslər.
           </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {featuredCourses.map((course) => (
             <CourseCard key={course.id} course={course} />
           ))}
@@ -90,7 +106,7 @@ export default function Home() {
         <div className="text-center mt-12">
           <Link
             href="/courses"
-            className="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-primary hover:bg-secondary transition-colors duration-200"
+            className="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-lg text-white bg-primary hover:bg-secondary transition-all duration-200 shadow-md hover:shadow-lg"
           >
             Bütün kurslara bax
           </Link>
@@ -108,6 +124,29 @@ export default function Home() {
         <GalleryGrid />
       </SectionWrapper>
 
+      {/* Teachers Section */}
+      <SectionWrapper id="teachers" className="bg-gray-50">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl font-bold text-gray-900 mb-4">Müəllimlər</h2>
+          <p className="text-gray-600 max-w-2xl mx-auto">
+            Peşəkar və təcrübəli müəllim heyətimizlə tanış olun.
+          </p>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {teachers.slice(0, 3).map((teacher) => (
+            <TeacherCard key={teacher.id} teacher={teacher} />
+          ))}
+        </div>
+        <div className="text-center mt-12">
+          <Link
+            href="/teachers"
+            className="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-lg text-white bg-primary hover:bg-secondary transition-all duration-200 shadow-md hover:shadow-lg"
+          >
+            Bütün müəllimlərə bax
+          </Link>
+        </div>
+      </SectionWrapper>
+
       {/* Testimonials Section */}
       <SectionWrapper id="testimonials" className="bg-blue-50">
         <div className="text-center mb-12">
@@ -116,7 +155,7 @@ export default function Home() {
             Tələbə və valideynlərimizin bizim haqqımızda fikirləri.
           </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {testimonials.map((testimonial) => (
             <TestimonialCard key={testimonial.id} testimonial={testimonial} />
           ))}
@@ -134,7 +173,7 @@ export default function Home() {
           </p>
           <Link
             href="/contact"
-            className="inline-block bg-accent text-primary font-bold px-8 py-4 rounded-md hover:bg-yellow-400 transition-colors duration-200"
+            className="inline-block bg-accent text-primary font-bold px-8 py-4 rounded-xl hover:bg-yellow-400 transition-all duration-200 shadow-premium hover:shadow-premium-lg"
           >
             Qeydiyyatdan Keç
           </Link>
